@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인덱스</title>
+</head>
+<body>
+	<!-- Fetch API는 네트워크 통신을 포함한 리소스 취득을 위한 인터페이스를 제공 -->
+	<script type="text/javascript">
+		function fetchFunc(fName) {
+			fetch(fName)
+			.then(function(res){ //응답된 결과를 받아오는 객체 = response
+				res.text().then(function(text){
+					document.querySelector('div').innerHTML = text;
+				});
+			});
+		}
+		if(location.hash) {
+			fetchFunc(location.hash.substr())
+		} else {
+			fetchFunc('html');
+		}
+	</script>
+	<ol id="loc">
+		<li><a href="#" onclick=fetchFunc("html.html")>html</a></li>
+		<li><a href="javascript:void(0)" onclick = fetchFunc("css.html")>css</a></li>
+		<li><a href="javascript:void(0)" onclick = fetchFunc("jsp.html")>JSP</a></li>
+	</ol>
+
+	<div>div영역</div>
+</body>
+</html>

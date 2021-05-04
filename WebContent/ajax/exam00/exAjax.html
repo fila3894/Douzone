@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type = text/javascript>
+	$(document).ready(function(){
+		$('#handler').click(function(){
+/* 			document.write('제이쿼리 테스트'); */
+ 			$('#stage').load('test.html'); 
+		});
+	}) ;
+</script>
+
+</head>
+<body>
+	<p>버튼 클릭시 이곳에 Jquery, Ajax 실행됩니다.</p>
+	<div id="stage" style="background-color: #cc0">
+		Stage
+	</div>
+	
+	<hr>
+	<input type="button" id="handler" value="Load Data"><br>
+</body>
+</html>
